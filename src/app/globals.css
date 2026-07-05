@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sans);
+  
+  --color-primary: #b7122a;
+  --color-on-primary: #ffffff;
+  --color-tertiary: #006762;
+  --color-background: #fbf9f8;
+  --color-surface-container: #efeded;
+  --color-error-container: #ffdad6;
+  --color-on-secondary-container: #656464;
+  --color-secondary-container: #e4e2e1;
+  --color-on-background: #1b1c1c;
+  --color-tertiary-container: #00837c;
+  --color-surface-container-highest: #e4e2e2;
+  --color-inverse-surface: #303031;
+  --color-surface-bright: #fbf9f8;
+  --color-surface-container-high: #e9e8e7;
+  --color-surface-variant: #e4e2e2;
+  --color-secondary: #5f5e5e;
+  --color-tertiary-fixed-dim: #71d7cf;
+  --color-outline-variant: #e4bebc;
+  --color-secondary-fixed: #e4e2e1;
+  --color-on-secondary: #ffffff;
+  --color-inverse-on-surface: #f2f0f0;
+  --color-outline: #8f6f6e;
+  --color-on-surface-variant: #5b403f;
+  --color-surface-dim: #dbdad9;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f5f3f3;
+  --color-on-tertiary: #ffffff;
+  --color-on-surface: #1b1c1c;
+  --color-surface-tint: #bb162c;
+  --color-error: #ba1a1a;
+  --color-surface: #fbf9f8;
+
+  --radius-DEFAULT: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+
+  --spacing-gutter: 12px;
+  --spacing-xs: 8px;
+  --spacing-md: 16px;
+  --spacing-base: 4px;
+  --spacing-sm: 12px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-container-margin: 16px;
+}
+
+body {
+  font-family: var(--font-sans), sans-serif;
+  background-color: #ffffff;
+  color: #1b1c1c;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Material Symbols Outlined Custom Config */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+/* Custom Scrollbar Hide */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Zomato Header Diamond Pattern */
+.diamond-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 20L20 40L0 20L20 0Z' fill='%23ffffff' fill-opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Custom Toggle */
+.custom-toggle {
+  width: 36px;
+  height: 20px;
+  background-color: #D1D5DB;
+  border-radius: 999px;
+  position: relative;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+.custom-toggle::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+.toggle-active {
+  background-color: #b7122a;
+}
+.toggle-active::after {
+  transform: translateX(16px);
+}
+
+/* Animation Utilities */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+/* Typography styles based on Stitch project configurations */
+.font-headline-xl {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.font-headline-md {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+}
+.font-headline-lg-mobile {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+}
+.font-body-lg {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.font-label-md {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+.font-label-sm {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 400;
+}
+.font-headline-lg {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+.font-body-md {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.text-headline-xl {
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.text-headline-md {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+}
+.text-headline-lg-mobile {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+}
+.text-body-lg {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.text-label-md {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+.text-label-sm {
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 400;
+}
+.text-headline-lg {
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+.text-body-md {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+/* DPDP Interactive Highlights for Mobile Walkthroughs */
+@keyframes pulse-highlight {
+  0% {
+    box-shadow: 0 0 0 0 rgba(226, 55, 68, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(226, 55, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(226, 55, 68, 0);
+  }
+}
+
+.interactive-highlight-pulse {
+  animation: pulse-highlight 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  position: relative;
+}
+
+@keyframes pulse-bg-glow {
+  0% {
+    background-color: rgba(226, 55, 68, 0.03);
+    border-color: rgba(226, 55, 68, 0.15);
+  }
+  50% {
+    background-color: rgba(226, 55, 68, 0.08);
+    border-color: rgba(226, 55, 68, 0.35);
+  }
+  100% {
+    background-color: rgba(226, 55, 68, 0.03);
+    border-color: rgba(226, 55, 68, 0.15);
+  }
+}
+
+.interactive-highlight-row {
+  animation: pulse-bg-glow 2.5s ease-in-out infinite;
+  border: 1px solid rgba(226, 55, 68, 0.15);
+}
+
